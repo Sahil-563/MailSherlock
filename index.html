@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pre-Send QA for Braze</title>
+    <script>
+      try {
+        const mode = localStorage.getItem("pre-send-qa-theme") || "system";
+        const systemDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+        if (mode === "dark" || (mode === "system" && systemDark)) {
+          document.documentElement.classList.add("dark");
+        }
+        document.documentElement.dataset.theme = mode;
+      } catch {
+        /* Theme preference is optional. */
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
