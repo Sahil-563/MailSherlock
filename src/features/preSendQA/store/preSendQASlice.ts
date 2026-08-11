@@ -30,6 +30,7 @@ const cloneDefaultRules = (): Record<string, ValidationRule[]> =>
   );
 
 const initialState: PreSendQAState = {
+  screen2Arrived: false,
   maxUnlockedStep: 1,
   selectedPrepChoice: null,
   selectedSegmentForExport: null,
@@ -100,6 +101,9 @@ export const preSendQASlice = createSlice({
       if (action.payload > state.maxUnlockedStep) {
         state.maxUnlockedStep = action.payload;
       }
+    },
+    setScreen2Arrived(state, action: PayloadAction<boolean>) {
+      state.screen2Arrived = action.payload;
     },
     setPrepChoice(state, action: PayloadAction<PrepChoice>) {
       state.selectedPrepChoice = action.payload;
@@ -297,6 +301,7 @@ export const {
   setExtractedFields,
   setMappings,
   setPrepChoice,
+  setScreen2Arrived,
   setRunProgress,
   setRunSize,
   setRunStatus,

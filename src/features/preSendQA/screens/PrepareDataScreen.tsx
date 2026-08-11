@@ -83,10 +83,11 @@ export function PrepareDataScreen() {
 
         <button
           type="button"
+          disabled={true}
           className={`rounded-xl border p-4 text-left transition ${
             workflow.selectedPrepChoice === "skip"
               ? "border-app-primary bg-indigo-50 shadow-glow"
-              : "border-slate-200 bg-white hover:border-app-primary hover:bg-indigo-50"
+              : "border-slate-200 bg-white hover:border-app-primary hover:bg-indigo-50 disabled:cursor-not-allowed disabled:opacity-50"
           }`}
           onClick={() => dispatch(setPrepChoice("skip"))}
         >

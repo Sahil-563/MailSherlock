@@ -12,7 +12,7 @@ import {
 import { persistConfig } from "./persistConfig";
 import { rootReducer } from "./rootReducer";
 
-const persistedReducer = persistReducer(persistConfig, rootReducer);
+const persistedReducer = persistReducer<ReturnType<typeof rootReducer>>(persistConfig, rootReducer);
 
 export const store = configureStore({
   reducer: persistedReducer,

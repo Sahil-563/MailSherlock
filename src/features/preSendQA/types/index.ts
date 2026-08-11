@@ -102,6 +102,7 @@ export interface ValidationResults {
 }
 
 export interface PreSendQAState {
+  screen2Arrived: boolean;
   maxUnlockedStep: WorkflowStep;
   selectedPrepChoice: PrepChoice | null;
   selectedSegmentForExport: string | null;

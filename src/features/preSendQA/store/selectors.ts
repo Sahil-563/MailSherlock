@@ -3,6 +3,8 @@ import type { DataSource, Mapping, WorkflowStep } from "../types";
 
 export const selectPreSendQA = (state: RootState) => state.preSendQA;
 
+export const selectScreen2Arrived = (state: RootState) => selectPreSendQA(state).screen2Arrived;
+
 export const selectMaxUnlockedStep = (state: RootState) => selectPreSendQA(state).maxUnlockedStep;
 
 export const selectSelectedCanvas = (state: RootState) => selectPreSendQA(state).selectedCanvas;
