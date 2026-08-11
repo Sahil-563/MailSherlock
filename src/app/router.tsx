@@ -16,8 +16,7 @@ import { RunValidationScreen } from "../features/preSendQA/screens/RunValidation
 const StepScreen = ({ step }: { step: WorkflowStep }) => {
   switch (step) {
     case 1:
-      return <div>Will Develop it soon</div>;
-    //<PrepareDataScreen />
+      return     <PrepareDataScreen />;
     case 2:
       return <SelectCanvasScreen />;
     case 3:
